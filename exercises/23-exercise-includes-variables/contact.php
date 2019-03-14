@@ -1,9 +1,9 @@
 <?php
-$title = 'Contact';
+$currentPage = 'Contact';
 include '_top.php';
 ?>
 <section>
-  <header><h2><?php echo $title;?></h2></header>
+  <header><h2><?php echo $currentPage;?></h2></header>
   <p>Visit us:</p>
   <address>
     BeCode<br />

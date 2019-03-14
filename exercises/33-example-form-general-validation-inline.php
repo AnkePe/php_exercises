@@ -19,12 +19,15 @@
     if (!empty($_POST)) {
       if (empty($_POST['naam']) || empty($_POST['functie']) || empty($_POST['opleidingsonderdeel']) || empty($_POST['algemeneVoorwaarden'])) {
         echo '<div class="error">Gelieve de verplichte velden in te vullen</div>';
+        // als het formulier niet leeg is, maar er ontbreekt een van de velden, dan echo en show form
       } else {
         $showForm = false;
+        // als het helemaal ingevuld is, moeten we het form niet meer laten zien
       }
     }
     if ($showForm) {
     ?>
+    <!-- hier verlaten we php en op regel 135 sluiten we de ftie terug in php-->
     <form method="post" action="33-example-form-general-validation-inline.php">
       <fieldset>
         <legend>persoonlijke gegevens</legend>
@@ -122,15 +125,17 @@
         ?>><label for="algemeneVoorwaarden">Ik ga akkoord met de algemene voorwaarden</label>
         <?php
         if (!empty($_POST) && empty($_POST['algemeneVoorwaarden'])) {
-          echo '<span class="error">gelieve akkoord te gaan met de algemene voorwaarden/span>';
+          echo '<span class="error">gelieve akkoord te gaan met de algemene voorwaarden</span>';
         }
         ?>
       </div>
       <button type="submit">Versturen</button>
     </form>
+    <!-- hier gaan we verder met php om de if ftie te sluiten -->
     <?php
     } else {
       echo '<p>Bedankt voor jouw input!</p>';
+      // als alles netjes is ingevuld
     }
     ?>
   </body>

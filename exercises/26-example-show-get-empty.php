@@ -1,21 +1,22 @@
 <?php
 /*
 Inspect the page without querystring parameter
-  (bvb http://localhost:8888/25-example-show-get-isset.php)
+  (bvb http://localhost:8888/25-example-show-get-isset.php)   => Hello, Unknown person
 
   Inspect the page with a different querystring parameter
-  (bvb http://localhost:8888/25-example-show-get-isset.php?skill=html)
+  (bvb http://localhost:8888/25-example-show-get-isset.php?skill=html)  => Hello, Unknown person
 
   Inspect the page with a set querystring parameter
-  (bvb http://localhost:8888/25-example-show-get-isset.php?name=BeCode)
+  (bvb http://localhost:8888/25-example-show-get-isset.php?name=BeCode) => Hello, BeCode
 
   Inspect the page with multiple querystring parameters
-  (bvb http://localhost:8888/25-example-show-get-isset.php?name=Devine&skill=html)
+  (bvb http://localhost:8888/25-example-show-get-isset.php?name=Devine&skill=html) => Hello, Devine
 
   Inspect the page with a querystring parameter, but an empty string
-  (bvb http://localhost:8888/25-example-show-get-isset.php?name=)
+  (bvb http://localhost:8888/25-example-show-get-isset.php?name=)     => Hello, Unknown person
 
   What is the difference between empty & isset?
+  bij isset wordt gecheckt of de variabele name gedefinieerd is, bij empty of de variabele leeg is
 
 */
 ?>

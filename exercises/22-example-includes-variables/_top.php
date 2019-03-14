@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>BeCode - <?php echo $title;?></title>
+    <title>BeCode - <?php echo $title;?></title>  
+    <!-- hier komt nu in de browsertab telkens een ander deel titel te staan afh vd pagina
+    omdat $title daar gedefinieerd wordt-->
   </head>
   <body>
     <header><h1>BeCode</h1></header>

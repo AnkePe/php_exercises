@@ -25,6 +25,7 @@
           if (!empty($_POST) && empty($_POST['naam'])) {
             echo '<span class="error">gelieve een naam in te vullen</span>';
           }
+          // als de hele array niet leeg is en het veld naam wel leeg is, wordt de echo toegevoegd
           ?>
         </div>
         <div>
@@ -41,6 +42,12 @@
               }
             ?>>ik ben een back-end developer</option>
           </select>
+          <!-- hier validatie toevoegen -->
+          <?php
+          if (!empty($_POST) && empty($_POST['functie'])) {
+            echo '<span class="error">gelieve een keuze te maken</span>';
+          }
+          ?>
         </div>
         <div>
           <input type="radio" name="opleidingsonderdeel" value="1-vallei" id="rbtDeel1"<?php
@@ -58,6 +65,12 @@
               echo 'checked';
             }
           ?>><label for="rbtDeel3">De berg</label>
+          <!-- hier validatie toevoegen -->
+          <?php
+          if (!empty($_POST) && empty($_POST['opleidingsonderdeel'])) {
+            echo '<span class="error">gelieve een keuze te maken</span>';
+          }
+          ?>
         </div>
       </fieldset>
       <fieldset>
@@ -90,6 +103,7 @@
           }
           ?>><label for="chkPhp">PHP</label>
         </div>
+        <!-- hieronder geen validatie, je kan ook niks kunnen ;-o -->
       </fieldset>
       <div>
         <input type="checkbox" name="algemeneVoorwaarden" value="1" id="algemeneVoorwaarden" <?php

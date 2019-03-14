@@ -10,7 +10,7 @@
   In het formulier tonen we de fouten uit de $errors array op de juiste plaats
 */
 
-$errors = array();
+$errors = array();    // lege array
 if (!empty($_POST)) {
   if (empty($_POST['naam'])) {
     $errors['naam'] = 'Gelieve je naam in te vullen';
@@ -19,7 +19,7 @@ if (!empty($_POST)) {
     $errors['functie'] = 'Gelieve je functie aan te duiden';
   }
   if (empty($_POST['opleidingsonderdeel'])) {
-    $errors['jaar'] = 'Gelieve je opleidingsonderdeel aan te duiden';
+    $errors['opleidingsonderdeel'] = 'Gelieve je opleidingsonderdeel aan te duiden';
   }
   if (empty($_POST['algemeneVoorwaarden'])) {
     $errors['algemeneVoorwaarden'] = 'Gelieve akkoord te gaan met de algemene voorwaarden';
@@ -101,6 +101,7 @@ if (!empty($_POST)) {
             }
           ?>><label for="rbtDeel3">De berg</label>
           <?php
+          // is er een error voor dit veld?
           if (!empty($errors['opleidingsonderdeel'])) {
             echo '<span class="error">' . $errors['opleidingsonderdeel'] . '</span>';
           }

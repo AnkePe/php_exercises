@@ -1,4 +1,5 @@
 <?php include '_top.php'; ?>
+<!-- hiermee importeer je dit php bestand in dit bestand -->
 <section>
   <header><h2>Over Ons</h2></header>
   <p>Our mission : Enabling tomorrow's digital talents to blossom.</p>

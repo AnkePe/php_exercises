@@ -1,4 +1,5 @@
 <?php include '_top.php'; ?>
+<!-- hiermee importeer je dit php bestand in dit bestand -->
 <section>
   <header><h2>Contact info</h2></header>
   <p>Visit us:</p>
@@ -10,3 +11,5 @@
   </address>
 </section>
 <?php include '_bottom.php'; ?>
+<!-- hiermee importeer je dit php bestand in dit bestand -->
+

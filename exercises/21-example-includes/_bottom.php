@@ -3,3 +3,4 @@
 </footer>
 </body>
 </html>
+<!-- dit hele bestand wordt met INCLUDE ingevoerd in de andere pagina's -->

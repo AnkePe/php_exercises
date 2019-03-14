@@ -23,12 +23,17 @@ Adjust the menu:
 4. Make it so the class active-menu-item is linked to the right element based on the $currentPage variable you created.
 */
 
+$menu = [
+  "home.php" => "Home",
+  "about.php" => "About",
+  "contact.php" => "Contact"
+]
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>BeCode - <?php echo $title;?></title>
+    <title>BeCode - <?php echo $currentPage;?></title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
@@ -36,9 +41,18 @@ Adjust the menu:
     <nav>
       <header><h2>Menu</h2></header>
       <ul>
-        <li><a href="home.php">Home</a></li>
+        <?php
+        foreach($menu as $index => $item) {
+          if ($item == $currentPage) {
+            echo "<li><a href=$index class = 'active-menu-item'>$item</a></li>";
+          } else {
+            echo "<li><a href=$index>$item</a></li>";
+          }          
+        }
+        ?>
+        <!-- <li><a href="home.php">Home</a></li>
         <li><a href="about.php">About</a></li>
-        <li><a href="contact.php">Contact</a></li>
+        <li><a href="contact.php">Contact</a></li> -->
       </ul>
     </nav>
 
