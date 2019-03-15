@@ -13,29 +13,35 @@
 $errors = array();    // lege array
 if (!empty($_POST)) {
   if (empty($_POST['naam'])) {
-    $errors['naam'] = 'Gelieve je naam in te vullen';
+    $errors['naam'] = 'Gelieve je naam in te vullen';   // we voegen een el toe aan $errors
   }
   if (empty($_POST['functie'])) {
-    $errors['functie'] = 'Gelieve je functie aan te duiden';
+    $errors['functie'] = 'Gelieve je functie aan te duiden';   // we voegen een el toe aan $errors
   }
   if (empty($_POST['opleidingsonderdeel'])) {
-    $errors['opleidingsonderdeel'] = 'Gelieve je opleidingsonderdeel aan te duiden';
+    $errors['opleidingsonderdeel'] = 'Gelieve je opleidingsonderdeel aan te duiden';   // we voegen een el toe aan $errors
   }
   if (empty($_POST['algemeneVoorwaarden'])) {
-    $errors['algemeneVoorwaarden'] = 'Gelieve akkoord te gaan met de algemene voorwaarden';
+    $errors['algemeneVoorwaarden'] = 'Gelieve akkoord te gaan met de algemene voorwaarden';  // we voegen een el toe aan $errors
   }
 }
+
+// var_dump($_POST);
+// echo '<br>';
+// var_dump($errors);
+
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>BeCode</title>
+    <!-- css voor de foutmeldingen -->
     <style>.error { color: red; }</style>
   </head>
   <body>
     <?php
-    //zijn er fouten bij het versturen?
+    //zijn er fouten of leegtes bij het versturen?
     if (!empty($_POST) && !empty($errors)) {
       echo '<div class="error">Gelieve de verplichte velden in te vullen</div>';
     }
@@ -59,7 +65,11 @@ if (!empty($_POST)) {
           <?php
           // is er een error voor dit veld?
           if (!empty($errors['naam'])) {
-            echo '<span class="error">' . $errors['naam'] . '</span>';
+            // echo '<span class="error">' . $errors['naam'] . '</span>';
+            // ik heb bovenstaaande vervangen door echo met double quotes
+            // opgepast: arrays met quoted keys moet je tussen {} plaatsen!
+            // je kan ook geen andere "" gebruiken, dus die heb ik vervangen door ''
+            echo "<span class='error'> {$errors['naam']} </span>"; 
           }
           ?>
         </div>
@@ -155,7 +165,7 @@ if (!empty($_POST)) {
     </form>
     <?php
     } else {
-      echo '<p>Bedankt voor jouw input!</p>';
+      echo '<p>Bedankt voor jouw input!</p>'; // het formulier is verstuurd en er zijn geen fouten 
     }
     ?>
   </body>
